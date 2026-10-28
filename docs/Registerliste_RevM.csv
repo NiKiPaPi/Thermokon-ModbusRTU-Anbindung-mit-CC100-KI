@@ -1,0 +1,88 @@
+﻿address;hex;name;access;signed;scale;unit;page;supported;note;fc;read_clears;special;index
+0;0x0000;Geraetekodierung;RO;False;1;;11;True;"Erwartet 0x0003; trotz Holding-Tabelle nicht veraenderbar";3;False;0;1
+1;0x0001;Firmwareversion;RO;False;1;;11;True;Rohwert, Versionskodierung nicht eindeutig spezifiziert;3;False;0;2
+2;0x0002;Geraetetyp;RW;False;1;;11;True;"0=AO2V; andere Typen werden erkannt, aber nicht als AO2V freigegeben";3;False;0;3
+3;0x0003;Standortkennung;RW;False;1;;11;True;;3;False;0;4
+4;0x0004;Tasterfunktion;RW;False;1;;11;True;;3;False;0;5
+5;0x0005;Anzeigeintervall;RW;False;1;s;11;True;;3;False;0;6
+6;0x0006;Antwortverzoegerung;RW;True;1;ms;11;True;"Text max 3100ms, Tabellenbereich bis 0x0C80=3200; nicht schreiben";3;False;0;7
+7;0x0007;Temperatur_Kalibrierung;RW;True;0.1;K;11;True;;3;False;0;8
+8;0x0008;Feuchte_Kalibrierung;RW;True;0.1;%rH;11;False;"Nur FTW04/LCN FTW04; widerspricht Fliesstext zur Moduswahl, Tabelle massgeblich";3;False;0;9
+9;0x0009;Poti_Obergrenze;RW;True;0.1;K;11;True;"Temperatur-Zuordnung; bei Feuchte-Zuordnung nicht als Temperatur auswerten";3;False;0;10
+10;0x000A;Poti_Untergrenze;RW;True;0.1;K;12;True;;3;False;0;11
+11;0x000B;Basis_Sollwert_nach_Reset;RW;True;0.1;degC;12;True;;3;False;0;12
+12;0x000C;Sollwertanzeige;RW;False;1;;12;True;;3;False;0;13
+13;0x000D;Nachtabsenkung;RW;False;0.1;K;12;True;;3;False;0;14
+14;0x000E;Totzone;RW;False;0.1;K;12;True;;3;False;0;15
+15;0x000F;Luefter_Automatikoption;RW;False;1;;12;True;;3;False;0;16
+16;0x0010;Xp_Heizen;RW;False;0.1;K;12;True;;3;False;0;17
+17;0x0011;Tn_Heizen;RW;False;1;min;12;True;;3;False;0;18
+18;0x0012;Stellgroesse_Max_Heizen;RW;False;1;%;12;True;;3;False;0;19
+19;0x0013;Stellgroesse_Min_Heizen;RW;False;1;%;12;True;;3;False;0;20
+20;0x0014;PWM_Zeit_Heizen;RW;False;1;min;12;True;;3;False;0;21
+21;0x0015;Reserviert_0015;RW;False;1;;12;False;"Reserviert; wird nicht abgefragt";3;False;0;22
+22;0x0016;Xp_Kuehlen;RW;False;0.1;K;12;True;;3;False;0;23
+23;0x0017;Tn_Kuehlen;RW;False;1;min;12;True;;3;False;0;24
+24;0x0018;Stellgroesse_Max_Kuehlen;RW;False;1;%;12;True;;3;False;0;25
+25;0x0019;Stellgroesse_Min_Kuehlen;RW;False;1;%;12;True;;3;False;0;26
+26;0x001A;PWM_Zeit_Kuehlen;RW;False;1;min;12;True;;3;False;0;27
+27;0x001B;Reserviert_001B;RW;False;1;;12;False;"Reserviert; wird nicht abgefragt";3;False;0;28
+28;0x001C;Frostschutz;RW;False;0.1;K;12;True;;3;False;0;29
+29;0x001D;Nicht_benutzt_001D;RW;False;1;;12;False;"Tabelle nicht benutzt; Fliesstext S6 widerspricht, kein Zugriff";3;False;0;30
+30;0x001E;Nicht_benutzt_001E;RW;False;1;;12;False;"Tabelle nicht benutzt; Fliesstext S6 widerspricht, kein Zugriff";3;False;0;31
+31;0x001F;DI1_Funktion;RW;False;1;;13;True;;3;False;0;32
+32;0x0020;DI2_Funktion;RW;False;1;;13;True;;3;False;0;33
+33;0x0021;DI1_Zaehlermodus;RW;False;1;;13;True;"0 Flanken, 1 Impulse, 2 Zeit; Zeiteinheit nicht dokumentiert";3;False;0;34
+34;0x0022;DI2_Zaehlermodus;RW;False;1;;13;True;"0 Flanken, 1 Impulse, 2 Zeit; Zeiteinheit nicht dokumentiert";3;False;0;35
+35;0x0023;Bypasszeit;RW;False;1;min;13;True;;3;False;0;36
+36;0x0024;LED_Funktion;RW;False;1;;13;True;;3;False;0;37
+37;0x0025;Reglermodus_nach_Reset;RW;False;1;;13;True;;3;False;0;38
+38;0x0026;Ausfallwert_AO1;RW;True;0.1;%;13;True;"0xFFFF bedeutet letzten Wert behalten; kein normaler Prozentwert";3;False;1;39
+39;0x0027;Ausfallwert_AO2;RW;True;0.1;%;13;True;"0xFFFF bedeutet letzten Wert behalten; kein normaler Prozentwert";3;False;1;40
+256;0x0100;Taster_Zustand;RO;False;1;;14;True;;3;False;0;41
+257;0x0101;Taster_Speicher;RO;False;1;;14;True;Lesen aktualisiert Speicher auf aktuellen Tasterzustand;3;True;0;42
+258;0x0102;Raumtemperatur;RO;True;0.1;degC;14;True;;3;False;0;43
+259;0x0103;Lokaler_Sollwertoffset;RO;True;0.1;K;14;True;Poti-Zuordnung beachten;3;False;0;44
+260;0x0104;Wirksamer_Sollwert;RO;True;0.1;degC;14;True;;3;False;0;45
+261;0x0105;Feuchte;RO;False;0.1;%rH;14;False;Nur FTW04/LCN FTW04;3;False;0;46
+262;0x0106;Luefterstufe;RO;False;1;;14;True;"0 Aus; 1..3 Stufen; 0xFF00 Automatik; Rohwort erhalten";3;False;0;47
+263;0x0107;Raumbelegung;RO;False;1;;14;True;;3;False;0;48
+264;0x0108;Regler_Heizen;RO;False;0.09775171065493646;%;14;True;;3;False;0;49
+265;0x0109;Regler_Kuehlen;RO;False;0.09775171065493646;%;14;True;;3;False;0;50
+266;0x010A;Lokale_Reglersperre;RO;False;1;;14;True;;3;False;0;51
+267;0x010B;AO1_Spannung;RO;False;0.01;V;14;True;"AO2V: 500=5V; abweichende Typen separat behandeln";3;False;0;52
+268;0x010C;AO2_Spannung;RO;False;0.01;V;14;True;;3;False;0;53
+269;0x010D;DI1_Zustand;RO;False;1;;15;True;;3;False;0;54
+270;0x010E;DI2_Zustand;RO;False;1;;15;True;;3;False;0;55
+271;0x010F;DI1_Zaehler;RO;False;1;;15;True;"Wird durch JEDE Leseabfrage genullt; letzte Differenz und lokale Summe erhalten";3;True;0;56
+272;0x0110;DI2_Zaehler;RO;False;1;;15;True;"Wird durch JEDE Leseabfrage genullt; keine absolute Geraetegesamtsumme";3;True;0;57
+273;0x0111;Aktiver_Reglermodus;RO;False;1;;15;True;"0 Sperre; 1 Heizen; 2 Kuehlen; 3 Auto Heizen; 4 Auto Kuehlen";3;False;0;58
+512;0x0200;Externe_Temperatur;RW;True;0.1;degC;15;True;;3;False;0;59
+513;0x0201;Externe_Feuchte;RW;False;0.1;%rH;15;False;Nur FTW04/LCN FTW04;3;False;0;60
+514;0x0202;Externer_Sollwertoffset;RW;True;0.1;K;15;True;;3;False;0;61
+515;0x0203;Basis_Sollwert;RW;True;0.1;degC;15;True;;3;False;0;62
+516;0x0204;Vorgabe_Raumbelegung;RW;False;1;;15;True;0 unbelegt, 1 belegt, 2 Bypass;3;False;0;63
+517;0x0205;Vorgabe_Reglermodus;RW;False;1;;15;True;;3;False;0;64
+518;0x0206;Handwert_AO1;RW;False;0.1;%;16;True;"0..1000=0..100%; >1000 Automatik, kein Prozentwert";3;False;2;65
+519;0x0207;Handwert_AO2;RW;False;0.1;%;16;True;"0..1000=0..100%; >1000 Automatik, kein Prozentwert";3;False;2;66
+16384;0x4000;Adress_Zugriffsschutz;RW;False;1;;16;True;"Ab FW1.13; nur lesen, kein Freischaltwert schreiben";3;False;0;67
+16385;0x4001;Erweiterte_Slaveadresse;RW;False;1;;16;True;"Ab FW1.13; keine Adressaenderung";3;False;0;68
+0;0x0000;Anzeige_Raumtemperatur;RW;False;1;;17;True;;1;False;0;69
+1;0x0001;Anzeige_Feuchte;RW;False;1;;17;False;"Nur Feuchtevariante bzw. reserviert; nicht abgefragt";1;False;0;70
+2;0x0002;Anzeige_Feuchtesollwert;RW;False;1;;17;False;"Nur Feuchtevariante bzw. reserviert; nicht abgefragt";1;False;0;71
+3;0x0003;Anzeige_Temperatursollwert;RW;False;1;;17;True;;1;False;0;72
+4;0x0004;Anzeige_Absolutwert;RW;False;1;;17;True;;1;False;0;73
+5;0x0005;Aenderung_Absolutwert;RW;False;1;;17;True;;1;False;0;74
+6;0x0006;Einheit_Celsius;RW;False;1;;17;True;;1;False;0;75
+7;0x0007;Anzeige_RH;RW;False;1;;17;False;"Nur Feuchtevariante bzw. reserviert; nicht abgefragt";1;False;0;76
+8;0x0008;Minimale_Stellgroesse_Konfigurationsbit;RW;False;1;;17;True;"Bit8: Tabelle und Fliesstext S7 widersprechen; Rohbit anzeigen";1;False;0;77
+9;0x0009;Belegung_nach_Reset;RW;False;1;;17;True;;1;False;0;78
+10;0x000A;Nicht_benutzt_000A;RW;False;1;;17;False;"Nur Feuchtevariante bzw. reserviert; nicht abgefragt";1;False;0;79
+11;0x000B;Nicht_benutzt_000B;RW;False;1;;17;False;"Nur Feuchtevariante bzw. reserviert; nicht abgefragt";1;False;0;80
+12;0x000C;Change_Over;RW;False;1;;17;True;;1;False;0;81
+13;0x000D;Poti_Zuordnung_Feuchte;RW;False;1;;17;True;;1;False;0;82
+256;0x0100;Taupunktmeldung;RW;False;1;;18;True;;1;False;0;83
+257;0x0101;Energiesperre;RW;False;1;;18;True;;1;False;0;84
+258;0x0102;Freigabe_Praesenztaster;RW;False;1;;18;True;;1;False;0;85
+259;0x0103;Freigabe_Regler;RW;False;1;;18;True;;1;False;0;86
+260;0x0104;LED_Vorgabe;RW;False;1;;18;True;;1;False;0;87
